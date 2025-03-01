@@ -1,0 +1,80 @@
+<!DOCTYPE html> 
+{% extends 'common.html' %}
+<html> 
+	<head> 
+		<title>{% block title %}Employee List{% endblock %}</title> 
+		<link rel="stylesheet" href="/static/joincss.css">
+	</head> 
+	
+	{% block content %}
+	<body>
+		<center><h1>Employee Records</h1></center>
+		<center>
+			{% with messages = get_flashed_messages(with_categories=true) %}
+				{% if messages %}
+					{% for category, message in messages %}
+						<div class="alert {{ category }}"> {{ message|capitalize }} </div>
+					{% endfor %}
+				{% endif %}
+            {% endwith %}<br/>
+		</center>
+		
+		<form method="GET" action="{{ url_for('search') }}">
+		    <div>
+		        <br/>
+				<div class="top-section">
+					<div >
+						<button class="back-button" id="backButton">< Back</button>
+					</div>
+						<input type="search" name="searchEmp" id="searchEmp" placeholder="Search Employee (by Id, Name and Email)" required>
+					<div>
+						<button  class="search-button" id="serBtn" type="submit">Search</button>
+						<!-- <button  id="clear-button">Clear</button> -->
+					</div>
+			    </div>
+		        
+		    </div>
+		</form>
+		{% if not data %} 
+			<center>************** No Record Found **************</center>
+		{% endif %}
+		{% if data %} 
+			<div class="table-container">
+				<table >
+					<thead>
+						<tr> 
+							<th>Emp. ID</th>	
+							<th>Name</th> 
+							<th>Email</th> 
+							<th>Designation</th> 
+							<th>CTC</th> 
+							<th>Contact Number</th>
+							<th>Action</th> 
+						</tr> 
+					</thead>
+					{%for getAllEmployee in data%} 
+						<tbody>
+							<tr> 
+								<td><center>{{getAllEmployee[0]}}</center></td> 
+								<td><center>{{getAllEmployee[1]}}</center></td> 
+								<td><center>{{getAllEmployee[2]}}</center></td> 
+								<td><center>{{getAllEmployee[3]}}</center></td> 
+								<td><center>{{getAllEmployee[4]}} LPA</center></td> 
+								<td><center>{{getAllEmployee[5]}}</center></td>
+								<td>
+									<button>
+										<a href="{{ url_for('edit', record_id=getAllEmployee[0]) }}">Edit</a>
+									</button>&nbsp;
+									<button>
+										<a href="{{ url_for('delete', record_id=getAllEmployee[0]) }}" onclick="return confirm('Are you sure you want to delete this record?')">Delete</a>
+									</button>	
+								</td>
+							</tr> 
+						</tbody>
+					{%endfor%} 
+				</table>
+			</div>
+		{% endif %}
+	</body>
+	{% endblock %} 
+</html> 

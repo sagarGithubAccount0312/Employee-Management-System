@@ -1,0 +1,30 @@
+<!DOCTYPE html> 
+{% extends 'common.html' %}
+<html> 
+	<head> 
+		<title>{% block title %}Employee Management System{% endblock %}</title> 
+		<link rel="stylesheet" href="/static/joincss.css">
+	</head> 
+	{% block content %}
+	<body> 
+		<center>
+			<h2>Welcome to Employee Management System</h2>
+		</center>
+		<center>
+			{% with messages = get_flashed_messages(with_categories=true) %}
+				{% if messages %}
+					{% for category, message in messages %}
+						<div class="alert {{ category }}"> {{ message|capitalize }} </div>
+					{% endfor %}
+				{% endif %}
+            {% endwith %}<br/>
+		</center>
+			<div class="button-container">
+				<button class="my-button" type="button" onclick="window.location.href='/add';">Add Employee</button>
+				<button class="my-button" type="button" onclick="window.location.href='/getAllEmployee';">Get all employee</button> 
+				<button class="my-button" type="button" onclick="window.location.href='/holidayList';">Holiday List</button>
+			</div>	
+	</body> 
+	{% endblock %}
+</html>
+

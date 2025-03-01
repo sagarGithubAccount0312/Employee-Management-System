@@ -1,0 +1,335 @@
+/* body {
+   background-image: url('https://coolbackgrounds.io/images/backgrounds/index/ranger-4df6c1b6.png');
+   background-image: url('https://www.bebotechnologies.com/skin/images/services/development/bebo-innovations.png'); 
+   background-size: cover;
+  background-repeat: no-repeat; 
+} */
+
+
+#salary {
+    width: 8em;
+  }
+
+
+.alert.success {
+  /* background-color: green;
+  width: 300px;
+  height: 20px;
+  color: azure;
+  padding: 5px; */
+  position: fixed;
+  top: 1;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 300px;
+  padding: 5px;
+  background-color: #4CAF50;
+  color: white;
+  text-align: center;
+  z-index: 9999; /* Make sure it's above other elements*/
+}
+
+.alert.error {
+  /* background-color: red;
+  width: 300px;
+  height: 20px;
+  color: azure;
+  padding: 5px; */
+
+  position: fixed;
+  top: 1;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 300px;
+  padding: 5px;
+  background-color: red;
+  color: white;
+  text-align: center;
+  z-index: 1;
+}
+
+.edit-btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  /* margin-top: 20px; */
+}
+
+.table-container {
+  max-height: 400px; /* Set a max height for the scrollable container */
+  overflow-y: auto; /* Enable vertical scrolling */
+}
+
+
+thead th {
+  background-color: #f2f2f2;
+  position: sticky;
+  top: 0;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+  /* background-color: #ffff */
+} 
+th {
+background-color: #f2f2f2;
+}
+
+.icon-container {
+  position: fixed;
+  top: 10px; /* Adjust the top distance as needed */
+  left: 10px; /* Adjust the left distance as needed */
+}
+
+.company-icon {
+  width: 60px; /* Adjust the width as needed */
+  height: auto; /* Maintain aspect ratio */
+ 
+}
+.company-icon:hover{
+  cursor: pointer;
+}
+
+.user-container {
+  position: fixed;
+  top: 10px; /* Adjust the top distance as needed */
+  right: 10px; /* Adjust the left distance as needed */
+}
+.user-icon {
+  width: 30px; /* Adjust the width as needed */
+  height: auto; /* Maintain aspect ratio */
+ 
+}
+.user-icon:hover{
+  cursor: pointer;
+}
+
+.button-container {
+  /* display: inline-block; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 500px;
+  
+}
+
+/* Optional styling for buttons */
+.my-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  margin-right: 10px;
+  
+}
+
+/* Style for the popup container */
+.popup {
+  display: none;
+  position: fixed;
+  height: auto;
+  width: 250px;
+  top: 40px; /* Adjust the top value as needed */
+  right: 20px; /* Adjust the right value as needed */
+  padding: 20px;
+  /* border: 1px solid #393636; */
+  background: #fff;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+}
+
+
+/* Style for the close button in the popup */
+.close {
+  position: absolute;
+  top: 2px;
+  right: 5px;
+  cursor: pointer;
+  font-size: 26px;
+  
+}
+
+.logout-button {
+  background: #3498db; 
+  color: #fff;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  padding: 3px;
+}
+.logout-button:hover{
+  background: #2975a8; 
+}
+/* ---------------------------------------------------------------------------------- */
+.loginbody {
+  font-family: Arial, sans-serif;
+  /* background-color: #f4f4f4; */
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 85vh;
+}
+
+.loginform {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+  width: 350px;
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+}
+
+label {
+  display: inline-block;
+  margin-bottom: 5px;
+  color: #212121;
+}
+
+input {
+  /* display: inline-block; */
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 15px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+select {
+  display: inline-block;
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 15px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+input[type="submit"] {
+  background-color: #4caf50;
+  color: #fff;
+  cursor: pointer;
+  width: 100%;
+}
+
+
+input[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+a {
+  text-decoration: none;
+  color: #3498db;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+
+
+.infoForm {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 500px;
+  margin: 20px;
+ 
+}
+
+input[type="checkbox"] {
+  width: 5%;
+  cursor: pointer;
+  
+}
+.disable{
+  cursor: no-drop;
+}
+
+.search-button{
+  background: rgb(30, 122, 208);
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  padding: 9px;
+  border-radius: 4px;
+  margin-left: 5px;
+}
+.search-button:hover{
+  background: rgb(21, 88, 150);
+}
+
+#clear-button{
+  background: rgb(30, 122, 208);
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  padding: 9px;
+  border-radius: 4px;
+  margin-left: 5px;
+  display: none;
+}
+#clear-button:hover{
+  background: rgb(21, 88, 150);
+}
+
+/* .top-buttons{
+  display: flex;
+  justify-content: space-between;
+} */
+
+input[type="search"] {
+  background-color: #fff;;
+  width: 40%;
+  margin-left: 500px;
+  
+}
+.top-section{
+  display: flex;
+  /* justify-content: space-between; */
+}
+
+.back-button{
+  background: rgb(30, 122, 208);
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 4px;
+  margin: 5px;
+}
+
+.mybadge{
+  width: 60px;
+  background: #4caf50 !important;
+}
+
+#notification-bar {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 300px;
+  padding: 10px;
+  background-color: #4CAF50;
+  color: white;
+  text-align: center;
+  z-index: 9999; /* Make sure it's above other elements */
+  display: none; /* Initially hidden */
+}

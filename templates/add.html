@@ -1,0 +1,55 @@
+<!DOCTYPE html> 
+{% extends 'common.html' %}
+<html> 
+	<head> 
+		<title>{% block title %}Add Employee{% endblock %}</title>
+		<link rel="stylesheet" href="/static/joincss.css">	 
+	</head> 
+	{% block content %}
+	<body> 
+		<center><h1>Employee Information</h1></center>
+		<center>
+			{% with messages = get_flashed_messages(with_categories=true) %}
+             {% if messages %}
+              {% for category, message in messages %}
+               <div class="alert {{ category }}"> {{ message|capitalize }} </div>
+              {% endfor %}
+             {% endif %}
+            {% endwith %}<br/>
+		</center>
+		<button class="back-button" id="backButton">< Back</button>
+		<div class="loginbody">
+			<form method="POST" class="infoForm"> 
+				<label>Employee Name:</label> 
+				<input type="name" name="name" placeholder="type name.." required><br/><br/>
+				<label>Email:</label> 
+				<input type="email" name="email" placeholder="type email.." required><br/><br/>
+				<label>Designation:</label> 
+				<select id="designation" name="designation" required>
+					<option value="">--None--</option>
+					<option value="Trainee">Trainee</option>
+					<option value="Associate Software Engineer">Associate Software Engineer</option>
+					<option value="Software Engineer Level 1">Software Engineer Level 1</option>
+					<option value="Software Engineer Level 2">Software Engineer Level 2</option>
+					<option value="Senior Software Engineer Level 1">Senior Software Engineer Level 1</option>
+					<option value="Senior Software Engineer Level 2">Senior Software Engineer Level 2</option>
+					<option value="Module Lead Level 1">Module Lead Level 1</option>
+					<option value="Module Lead Level 2">Module Lead Level 2</option>
+					<option value="Associate Team Lead">Associate Team Lead</option>
+					<option value="Team Lead">Team Lead</option>
+					<option value="Manager">Manager</option>
+					<option value="Senior Manager">Senior Manager</option>
+					<option value="Director">Director</option>
+					<option value="Senior Director">Senior Director</option>
+					<option value="CEO">CEO</option>
+				</select><br/><br/>
+				<label>CTC(in lakhs):</label> 
+				<input type="number" name="ctc" id="salary" placeholder="type CTC.." min="1" max="100" step=".01" required><br/><br/> 
+				<label>Phone Number:</label> 
+				<input type="tel" name="phone" placeholder="type phone numbere.." pattern="[0-9]{10}" maxlength="10" required><br/><br/>
+				<center><input type = "submit" value = "submit"/></center><br/><br/> 
+			</form> 
+		</div>	  
+	</body> 
+	{% endblock %}
+</html>

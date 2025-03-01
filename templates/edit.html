@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+{% extends 'common.html' %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Edit Employee Record{% endblock %}</title>
+    <link rel="stylesheet" href="/static/joincss.css">
+</head>
+{% block content %}
+<body>
+    <center>
+        <h1>Edit Employee Record</h1>
+    </center>
+    <button class="back-button" id="backButton">< Back</button>
+    <div class="loginbody">
+        <form method="POST" action="{{ url_for('add') }}" class="infoForm">
+            <label>Employee Name:</label>
+            <input type="text" name="name" value="{{ record[1] if record else '' }}" placeholder="Type name.." required><br/><br/>
+            <input type="hidden" name="email" value="{{ record[2] if record else '' }}" placeholder="Type email.." required>
+            <label>Designation:</label>
+            <select name="designation" required>
+                <option value="">--None--</option>
+                {% for option in ["Trainee", "Associate Software Engineer", "Software Engineer Level 1", "Software Engineer Level 2", "Senior Software Engineer Level 1", "Senior Software Engineer Level 2", "Module Lead Level 1", "Module Lead Level 2", "Associate Team Lead", "Team Lead", "Manager", "Senior Manager", "Director", "Senior Director", "CEO"] %}
+                    <option value="{{ option }}" {% if record and option == record[3] %}selected{% endif %}>{{ option }}</option>
+                {% endfor %}
+            </select><br/><br/> 
+            <label>CTC (in lakhs):</label>
+            <input type="number" name="ctc" value="{{ record[4] if record else '' }}" placeholder="Type CTC.." min="1" max="100" step=".01" required><br/><br/>
+            <label>Phone Number:</label>
+            <input type="tel" name="phone" value="{{ record[5] if record else '' }}" placeholder="Type phone number.." pattern="[0-9]{10}" required><br/><br/>
+            <input type="hidden" name="recordId" id="recordId" value="{{ record[0] if record else '' }}">
+            <input type="hidden" name="editMode" id="editMode" value="{{ 'true' if record else 'false' }}">  
+            <input type="submit" value="Submit"><br/><br/>
+        </form>     
+    </div>
+</body>
+{% endblock %}
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html> 
+{% extends 'common.html' %}
+<html> 
+	<head> 
+		<title>{% block title %}Holiday List | EMS{% endblock %}</title> 
+	</head> 
+	{% block content %}
+    <body>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"> 
+        <!-- Option 1: Include in HTML -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">       
+        <div class="container mt-5">
+            <center><h2>Holiday List - 2024</h2></center>
+            <button  id="backButton">< Back</button>
+            <ul class="list-group mt-3">
+                <!-- New Year's Day -->
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <span>
+                        <i class="bi bi-calendar-event mx-1"></i> New Year's Day
+                    </span>
+                    <span class="badge bg-success mybadge">01 Jan</span>
+                </li>
+        
+                <!-- Memorial Day -->
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <span>
+                        <i class="bi bi-calendar-event mx-1"></i> Republic Day
+                    </span>
+                    <span class="badge bg-success mybadge">26 Jan</span>
+                </li>
+
+                <!-- Thanksgiving Day -->
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <span>
+                        <i class="bi bi-calendar-event mx-1"></i> Holi
+                    </span>
+                    <span class="badge bg-success mybadge">25 Mar</span>
+                </li>
+
+                <!--  -->
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <span>
+                        <i class="bi bi-calendar-event mx-1"></i> Independence Day
+                    </span>
+                    <span class="badge bg-success mybadge">15 Aug</span>
+                </li>
+        
+                <!--  -->
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <span>
+                        <i class="bi bi-calendar-event mx-1"></i> Gandhi Jayanti
+                    </span>
+                    <span class="badge bg-success mybadge">02 Oct</span>
+                </li>
+                <!--  -->
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <span>
+                        <i class="bi bi-calendar-event mx-1"></i> Diwali
+                    </span>
+                    <span class="badge bg-success mybadge">31 Oct</span>
+                </li>
+                <!--  -->
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <span>
+                        <i class="bi bi-calendar-event mx-1"></i> Diwali
+                    </span>
+                    <span class="badge bg-success mybadge">01 Nov</span>
+                </li>
+                <!--  -->
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <span>
+                        <i class="bi bi-calendar-event mx-1"></i> Guru Nanak Jayanti
+                    </span>
+                    <span class="badge bg-success mybadge">15 Nov</span>
+                </li>
+                <!--  -->
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <span>
+                        <i class="bi bi-calendar-event mx-1"></i> Christmas Day
+                    </span>
+                    <span class="badge bg-success mybadge">25 Dec</span>
+                </li>
+            </ul>
+        </div>
+        
+        <!-- Add Bootstrap JS and Popper.js scripts (required for Bootstrap components) -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+	{% endblock %}
+</html>
+
