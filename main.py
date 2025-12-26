@@ -137,8 +137,8 @@ def Display_Employees():
         else:
             print("\n**No record found**\n")
      else:
-         Display_Employees()
          print("\nPlease enter numeric value\n")
+         Display_Employees()
 
      menu()
 
